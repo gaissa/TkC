@@ -16,7 +16,9 @@ root.option_add('*font', 'sans -11')
 
 class Browser1(Frame):
  
+   # the main window
    def __init__(main):
+    
       Frame.__init__(main)
       main.pack(expand=YES, fill=BOTH)
 
@@ -48,31 +50,38 @@ class Browser1(Frame):
         
    # get code
    def getCode(main, event):
+    
       url1 = event.widget.get()
       parseEntry = urlparse.urlparse(url1)
       main.contents.text_state=NORMAL
+      
       if parseEntry[0] == '':
          url1 = 'http://' + url1
+         
       try:
          urllib1 = urllib.urlopen(url1)
          main.contents.settext(urllib1.read())         
          urllib1.close()
+         
       except IOError:
          main.contents.settext('URL NOT FOUND!')
-      main.contents.text_state=DISABLED
+         main.contents.text_state=DISABLED
 
    # define button1 command
    def quit(main):
+    
       sys.exit()
 
    # define button2 command
    def help(main):
+    
       reload(sys)
       sys.setdefaultencoding('utf-8')      
       tkMessageBox.showinfo('About', 'TkC 0.1.0''\n''Copyright (C) 2011 sugardrunk''\n''\n''Fetch code from any URL and save it to file.''\n''\n'"URL's (IRI's) with non-ascii characters not supported.")
    
    # define button3 command
    def savefile(main):
+    
       reload(sys)
       sys.setdefaultencoding('utf-8')
       main.contents.exportfile('output.html')
