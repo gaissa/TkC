@@ -5,7 +5,7 @@
 ## TkC v.0.1.0
 
 ##  Fetch code from any url and save it to file
-##  Copyright (C) 2011 sugardrunk <http://sugardrunk.devio.us>
+##  Copyright (C) 2011 sugardrunk <http://koti.tamk.fi/~c1jkahko/>
 
 
 from Tkinter import *
